@@ -6,7 +6,7 @@
     
     /*Default size*/
     widget.setWidth('180');
-    widget.setHeight('180');
+    widget.setHeight('21');
 
 	
 	//add Attributes:
@@ -38,18 +38,19 @@
         'category': 'Mouse Events'
     }]);
 	
-	widget.on('Display', function(attributes) {
+	widget.on('display', function(attributes) {
 		
 			var that = this;
+			
 			
             
             this.options.max                  = attributes["data-max"];
             this.options.fixedalue                  = attributes["data-fixedvalue"];
 
-            window.setTimeout(function(){
-                    that.init();
-            }, 0);
-            
+            if(attributes['data-binding-value']) {
+				       $('#' + attributes['id']+' .rateit').html('['+attributes['data-binding-value']+']');
+				       
+				   }
            
     });
 

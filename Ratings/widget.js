@@ -27,7 +27,7 @@
 		
         $htmlElement = $("#" + this.id);
         max = this.options.max || 5;
-        $htmlElement.append('<div class="rateit"> </div>');
+        $htmlElement.html('<div class="waf-container"><span class="rateit"> </span></div>');
 		
 		$rateIt = $htmlElement.find('.rateit');
 		$rateIt.rateit();
@@ -36,6 +36,7 @@
         if (this.options.fixedvalue) {
 			$rateIt.rateit('value', this.options.fixedvalue);
         }
+       
     }
 
 	widget.prototype.value = function(myValue) {
