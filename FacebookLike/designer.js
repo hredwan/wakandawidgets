@@ -1,9 +1,10 @@
-(function() {
+(function(FacebookLike) {
 
-    var widget = Widget.FacebookLike.inherit(WAF.require('waf-behavior/studio'));
-    
-    //add Attributes:
-    widget.addAttributes([{
+//      /*Display name of the widget*/
+	FacebookLike.setDescription('FacebookLike');
+
+//      /*Define your widget's properties*/
+	FacebookLike.addAttributes([{
         name: 'data-appID',
         description: 'App ID',
         type: 'string'
@@ -51,4 +52,18 @@
     	defaultValue:'false'
     }]);
 
-})();
+//      /*Default width and height of your widget when added to the Page*/
+	FacebookLike.setWidth('300');
+	FacebookLike.setHeight('300');
+
+	FacebookLike.on('display', function(attributes) {
+		
+			window.setTimeout(function(){
+				that.init();
+			}, 0)
+				  
+           
+    });
+
+
+});

@@ -1,18 +1,12 @@
-(function() {
+(function(Ratings) {
 
-    var widget = Widget.Ratings.inherit(WAF.require('waf-behavior/studio'));
-	
-	 widget.setDescription('Rating');
-    
-    /*Default size*/
-    widget.setWidth('180');
-    widget.setHeight('21');
+     /*Display name of the widget*/
+	Ratings.setDescription('Ratings');
 
-	
-	//add Attributes:
-    widget.addAttributes([{
+//      /*Define your widget's properties*/
+	Ratings.addAttributes([{
         name: 'data-max',
-        description: 'Rating type',
+        description: 'Max Value',
         type: 'string',
         defaultValue:'5'
     },{
@@ -27,23 +21,31 @@
     	type:'string'
     }]);
     
-     /*Events*/
-    widget.addEvents([{
+    
+
+//      /*Default width and height of your widget when added to the Page*/
+	Ratings.setWidth('180');
+	Ratings.setHeight('21');
+
+//      /*Define the events for your widget*/
+	Ratings.addEvent({
         'name': 'rate',
         'description': 'On Rate',
         'category': 'Mouse Events'
-    },{
+    });
+    
+	Ratings.addEvent({
         'name': 'reset',
         'description': 'On Reset Rate',
         'category': 'Mouse Events'
-    }]);
-	
-	widget.on('display', function(attributes) {
+    });
+
+
+
+	Ratings.on('display', function(attributes) {
 		
 			var that = this;
 			
-			
-            
             this.options.max                  = attributes["data-max"];
             this.options.fixedalue                  = attributes["data-fixedvalue"];
 
@@ -51,8 +53,10 @@
 				       $('#' + attributes['id']+' .rateit').html('['+attributes['data-binding-value']+']');
 				       
 				   }
+			this.init();	   
            
     });
 
-	
-})();
+});
+
+// For more information, refer to http://doc.wakanda.org/Wakanda0.DevBranch/help/Title/en/page3870.html
