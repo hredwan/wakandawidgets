@@ -1,5 +1,5 @@
 (function(Ratings) {
-
+	Ratings.inherit(WAF.require('waf-behavior/studio'));
      /*Display name of the widget*/
 	Ratings.setDescription('Ratings');
 
@@ -47,10 +47,11 @@
 			var that = this;
 			
             this.options.max                  = attributes["data-max"];
-            this.options.fixedalue                  = attributes["data-fixedvalue"];
-
-            if(attributes['data-binding-value']) {
-				       $('#' + attributes['id']+' .rateit').html('['+attributes['data-binding-value']+']');
+            this.options.fixedValue                  = attributes["data-fixedvalue"];
+			studio.alert("ok");
+            if(attributes['data-binding']) {
+            	       console.log("ok");
+				       $('#' + attributes['id']+' .rateit').html('['+attributes['data-binding']+']');
 				       
 				   }
 			this.init();	   

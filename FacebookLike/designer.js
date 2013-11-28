@@ -7,7 +7,8 @@
 	FacebookLike.addAttributes([{
         name: 'data-appID',
         description: 'App ID',
-        type: 'string'
+        type: 'string',
+        defaultValue: '223560227821348'
     },{
         name: 'data-page',
         description: 'Facebook Page',
