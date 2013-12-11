@@ -14,6 +14,7 @@ WAF.define('DropboxSaver', function() {
             throw "Dropbox Saver:Missing App Key";
         }
         $("#" + this.id).text('Dropbox Saver');
+       
     };
 
    

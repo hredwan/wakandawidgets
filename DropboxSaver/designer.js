@@ -45,7 +45,10 @@
     	});
    
     DropboxSaver.on('Display', function(event) {
-        setTimeout(this.init(), 0);
+        studio.alert("init");
+    });
+    DropboxSaver.on('resize', function(event) {
+        studio.alert("init");
     });
 
 });
